@@ -1,0 +1,12 @@
+This program assumes there are no constraints on the base, besides being an integer number, therefore it can take any integer number (positive or negative) for the base. Upon reaching the "$" sign, it will start taking numbers in the condensed form, as shown in the exercise. It can take for separators either blank space  ' ' or  'b', which can be changed by modifying the variable 'blank' (for input). The program is also forgiving, allowing you to alternate between adding 'b' or ' ' after the condensed number. This is mostly because the instructions were unclear wether to let only 'b' or to allow spaces, for which 'b' actually stands in the exercice ('white gap').
+The choice of delimiter display is ' ' for ease of read, however that can be changed easily by modifying only the variable 'space' (for output).
+
+For storing the data, the program uses 5 main variables:
+
+# "signs" is used to store the signs for the condensed representation: '1' for '+', '0' for 'equal', '-1' for '-'. Those will be used to calculate the 'uncondensed form'. It will store consecutive signs in the same position, therefore no matter how many signs there are for one refference, only one of them will be taken into consideration in order to conserve space.
+# "relat" (stands for 'relative difference') is used to store the relative difference between the number and the base, enabling us to calculate the original number by knowing the sign of the difference.
+# "occ" (stands for 'occurences') is used to store the number of occurences for the consecutive identical numbers. This allows us to keep a record of how many times the number appears and to be able to reproduce the initial numbers accordingly.
+# "orig" is a holder for the final result, calculated at the end based on the condensed representation.
+# "base" stores the base number
+
+For keeping the code as clean as possible, the result of the program is computed by using a function 'end_call_script' which calls multiple functions.

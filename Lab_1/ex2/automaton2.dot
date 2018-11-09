@@ -1,0 +1,27 @@
+digraph automaton_2 {
+rankdir="LR";
+node [shape = circle];
+start -> s1 [label = "0-9 or '-'"];
+
+s1 -> s1 [label = "0-9"];
+s1 -> s2 [label = "$"];
+
+s2 -> s3 [label = "+"];
+s2 -> s4 [label = "-"];
+s2 -> s5 [label = "0"];
+s2 -> finish [label = "el/f if elem > 0"]
+
+s3 -> s3 [label = "+"];
+s3 -> s6 [label = "0-9"];
+
+s4 -> s4 [label = "-"];
+s4 -> s6 [label = "0-9"];
+
+s5 -> s5 [label = "0"];
+s5 -> s2 [label = "space/b"];
+s5 -> finish [label = "el/f"];
+
+s6 -> s6 [label = "0-9"]
+s6 -> s2 [label = "space/b"];
+s6 -> finish [label = "el/f"];
+}
