@@ -16,9 +16,6 @@ s:	u A	        { print_string "S -> U a\n" }
 |	u C		{ print_string "S -> U c\n" }
 |	B u A		{ print_string "S -> b U a\n" }
 ;
-
 u:	D		{ print_string "U -> d\n" }
-;
-v:	D		{ print_string "V -> d\n" }
 ;
 %%

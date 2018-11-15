@@ -1,7 +1,6 @@
 %token A
 %token B
 %token C
-%token L
 %token EOF
 %type <unit> sp
 %start sp
@@ -17,7 +16,7 @@ s:	A u	        { print_string "S -> a U\n" }
 ;
 
 u:	C u		{ print_string "U -> c U\n" }
-|	L		{ print_string "U -> empty\n" }
+|			{ print_string "U -> empty\n" }
 ;
 
 %%

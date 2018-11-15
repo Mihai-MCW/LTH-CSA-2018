@@ -1,6 +1,5 @@
 %token A
 %token B
-%token L
 %token EOF
 %type <unit> sp
 %start sp
@@ -20,6 +19,6 @@ v:	w		{ print_string "V -> W\n" }
 |	B		{ print_string "V -> b\n" }
 ;
 
-w:	L		{ print_string "W -> empty\n" }
+w:			{ print_string "W -> empty\n" }
 ;
 %%
